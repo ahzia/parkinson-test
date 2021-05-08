@@ -35,13 +35,13 @@ function HomePage() {
     <div>
       <Container className="main-container top-container">
         <Container className="top-center-container">
-          <Typography variant="h3" component="h2">
+          <Typography variant="h3" component="h3">
             Parkinsons Test
           </Typography>
 
           <Link to="/test">
             <Button variant="contained" color="secondary">
-              <Typography variant="h6" component="h2">
+              <Typography variant="h6" component="h6">
                 Take Test
               </Typography>
             </Button>

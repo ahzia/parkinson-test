@@ -1,3 +1,12 @@
+.draw-canvas-parent {
+}
+
+.draw-canvas-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .draw-canvas {
   background-color: bisque;
   border: 2px solid black;
