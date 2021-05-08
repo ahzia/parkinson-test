@@ -19,6 +19,7 @@
 
 .middle-container {
   background-color: blue;
+  padding-top: 1em;
 }
 
 a {
@@ -57,4 +58,11 @@ a {
   bottom: 0;
   right: 0;
   left: 0;
+}
+
+
+.home-paper {
+  padding: 2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

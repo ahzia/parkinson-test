@@ -1,7 +1,20 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Container, Typography, Button } from '@material-ui/core'
+import { Container, Typography, Button, Paper } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import './HomePage.css'
+import * as Const from './constants.js'
+
+function InfoBlock(props) {
+  return (
+    <Paper elevation={4} className="home-paper" variant="outlined">
+      <Typography>
+        <h1> {props.title}</h1>
+        {props.para}
+      </Typography>
+    </Paper>
+  )
+}
+
 
 function HomePage() {
   const middleRef = useRef()
@@ -44,7 +57,9 @@ function HomePage() {
         }
       </Container>
       <Container className="main-container middle-container" ref={middleRef}>
-        Info stuff
+        <InfoBlock title="What is Parkinsons Disease?" para={Const.PARKINSONS_INFO}></InfoBlock>
+      
+        <InfoBlock title="What is Parkinsons Test?" para={Const.PARKINSONS_INFO}></InfoBlock>
       </Container>
     </div>
   )
