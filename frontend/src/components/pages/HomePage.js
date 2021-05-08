@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Container } from '@material-ui/core'
+import { Container, Typography, Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import './HomePage.css'
 
 function HomePage() {
@@ -20,16 +21,30 @@ function HomePage() {
   return (
     <div>
       <Container className="main-container top-container">
-      {
-        showArrow && (
-          <div className="arrow bounce top-arrow">
-            <a className="fa fa-arrow-down fa-2x" onClick={onArrowClick} />
-          </div>
-        )
-      }
+        <Container className="top-center-container">
+          <Typography variant="h3" component="h2">
+            Parkinsons Test
+          </Typography>
+
+          <Link to="/test">
+            <Button variant="contained" color="secondary">
+              <Typography variant="h6" component="h2">
+                Take Test
+              </Typography>
+            </Button>
+          </Link>
+        </Container>
+        
+        {
+          showArrow && (
+            <div className="arrow bounce top-arrow">
+              <a className="fa fa-arrow-down fa-2x" onClick={onArrowClick} />
+            </div>
+          )
+        }
       </Container>
       <Container className="main-container middle-container" ref={middleRef}>
-        a
+        Info stuff
       </Container>
     </div>
   )

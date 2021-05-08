@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import DrawCanvas from '../DrawCanvas'
+import './TestPage.css'
 
 function TestPage() {
   return (
     <div>
-      Test
+      <DrawCanvas />
     </div>
   )
 }

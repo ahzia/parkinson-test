@@ -6,6 +6,15 @@
 .top-container {
   position: relative;
   background-color: aliceblue;
+
+  display: flex !important;
+  flex-direction: row;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.top-center-container {
+  text-align: center;
 }
 
 .middle-container {
