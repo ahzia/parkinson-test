@@ -7,9 +7,12 @@ import {
   Route,
   Redirect
 } from 'react-router-dom'
+import { useState } from 'react'
 import './App.css';
 
 function App() {
+  const [result, setResult] = useState(false)
+
   return (
     <div className="App">
       <Router>
@@ -21,7 +24,7 @@ function App() {
             <TestPage />
           </Route>
           <Route path="/result">
-            <ResultPage />
+            <ResultPage result={result} setResult={setResult}/>
           </Route>
 
           {/* Redirecting non-matches to home */}

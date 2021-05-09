@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { Typography } from '@material-ui/core'
 import DrawCanvas from '../DrawCanvas'
 import './TestPage.css'
 
 function TestPage() {
+  const history = useHistory()
+
   const imageSubmit = (image) => {
-    console.log(image)
+    history.push('/result')
   }
 
   return (

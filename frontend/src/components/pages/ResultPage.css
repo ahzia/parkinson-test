@@ -1,0 +1,25 @@
+body {
+  background-color: aliceblue;
+}
+
+.gradient-col {
+  background-color: aliceblue;
+  background: linear-gradient(-45deg, #d1c4e9, #ebd5dc, aliceblue, #acf1eb);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.top-container {
+  position: relative;
+  background-color: transparent;
+
+  display: flex !important;
+  flex-direction: row;
+  align-items: center !important;
+  justify-content: center !important;
+}
