@@ -1,3 +1,7 @@
+body {
+  background-color: aliceblue;
+}
+
 .main-container {
   width: 100%;
   height: 100vh;
@@ -18,8 +22,10 @@
 }
 
 .middle-container {
-  background-color: blue;
+  background-color: aliceblue;
   padding-top: 1em;
+  padding-bottom: 1em;
+  height: max-content;
 }
 
 a {
@@ -63,6 +69,5 @@ a {
 
 .home-paper {
   padding: 2em;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  
 }
