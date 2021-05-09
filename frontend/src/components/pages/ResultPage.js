@@ -1,11 +1,16 @@
 import React from 'react'
 
+
+
+
 function ResultPage() {
   return (
     <div>
-      Result
+      Your Result:
     </div>
   )
 }
+
+
 
 export default ResultPage

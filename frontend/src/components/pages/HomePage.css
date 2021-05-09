@@ -4,9 +4,9 @@ body {
 
 .gradient-col {
   background-color: aliceblue;
-  background: linear-gradient(-45deg, #d1c4e9, #ebd5dc, #c9e6f3, #b2f2f1);
+  background: linear-gradient(-45deg, #d1c4e9, #ebd5dc, aliceblue, #acf1eb);
   background-size: 400% 400%;
-  animation: gradient 40s ease infinite;
+  animation: gradient 30s ease infinite;
 }
 
 .main-container {
@@ -45,6 +45,7 @@ body {
   padding-top: 1em;
   padding-bottom: 1em;
   height: max-content;
+  margin: auto;
 }
 
 a {
@@ -89,4 +90,18 @@ a {
 .home-paper {
   padding: 2em;
   
+}
+
+/* fade in slidy part */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }

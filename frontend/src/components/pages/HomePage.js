@@ -27,6 +27,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// fade
+function FadeInSection(props) {
+  const [isVisible, setVisible] = React.useState(true);
+  const domRef = React.useRef();
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => setVisible(entry.isIntersecting));
+    });
+    observer.observe(domRef.current);
+    return () => observer.unobserve(domRef.current);
+  }, []);
+  return (
+    <Grid item xs={12}
+      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+      ref={domRef}
+    >
+      {props.children}
+    </Grid>
+  );
+}
+
 
 function InfoBlock(props) {
   const classes = useStyles();
@@ -50,10 +71,10 @@ function InfoBlock(props) {
     </Grid>
   )} else {
     typoBlock = (
-      <Grid container spacing={7} direction="row">
+      <Grid container spacing={0} direction="row" >
 
-        <Grid container direction="column" justify="center" alignItems="center"item xs={12} sm>
-        <Grid item xs>
+        <Grid container direction="column" justify="space-evenly" alignItems="center" sm>
+        <Grid item>
         <Typography>
         <h1> {props.title}</h1> <br />
         {props.para}
@@ -78,11 +99,9 @@ function InfoBlock(props) {
     )
   }
   return (
-    <Grid item xs={12}>
     <Paper elevation={2} className={classes.paper}>
       {typoBlock}
     </Paper>
-    </Grid>
   )
 }
 
@@ -130,12 +149,19 @@ function HomePage() {
         }
       </Container>
       </div>
+
       <Container className="main-container middle-container" >
-      <Grid className={classes.root} container spacing={4} style={{color: 'aliceblue'}}>
+      <Grid className={classes.root} container spacing={10} style={{'padding-top': '2em', 'padding-bottom': '2em'}}>
+        <FadeInSection key={1}>
         <InfoBlock title="What is Parkinsons Disease?" para={Const.PARKINSONS_INFO} pic="fall_down_orange.png"></InfoBlock>
+        </FadeInSection>
+        <FadeInSection key={2}>
         <InfoBlock title="What is Parkinsons Test?" para={Const.TEST_INFO} pic="data_computer_pink.svg"></InfoBlock>
+        </FadeInSection>
         <div ref={middleRef}></div>
+        <FadeInSection>
         <InfoBlock title="Why use Parkinsons Test?" para={Const.WHY_TEST} buttonLink="" pic="cup_tea_blue.svg"></InfoBlock>
+        </FadeInSection>
       </Grid>
       </Container>
     </div>
