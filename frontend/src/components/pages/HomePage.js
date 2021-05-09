@@ -105,12 +105,13 @@ function HomePage() {
 
   return (
     <div>
+      <div className="gradient-col">
       <Container className="main-container top-container">
         <Container className="top-center-container">
-          <Typography variant="h3" component="h3">
+          <Typography variant="h2" component="h2">
             Parkinsons Test
           </Typography>
-
+          <br />
           <Link to="/test">
             <Button variant="contained" color="secondary">
               <Typography variant="h6" component="h6">
@@ -128,6 +129,7 @@ function HomePage() {
           )
         }
       </Container>
+      </div>
       <Container className="main-container middle-container" >
       <Grid className={classes.root} container spacing={4} style={{color: 'aliceblue'}}>
         <InfoBlock title="What is Parkinsons Disease?" para={Const.PARKINSONS_INFO} pic="fall_down_orange.png"></InfoBlock>
