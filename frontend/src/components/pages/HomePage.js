@@ -36,7 +36,11 @@ function FadeInSection(props) {
       entries.forEach(entry => setVisible(entry.isIntersecting));
     });
     observer.observe(domRef.current);
-    return () => observer.unobserve(domRef.current);
+    return () => {
+      if(domRef.current) {
+      observer.unobserve(domRef.current);
+      }
+    }
   }, []);
   return (
     <Grid item xs={12}
